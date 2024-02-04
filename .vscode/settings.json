@@ -1,0 +1,32 @@
+{
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk (latexmkrc)",
+            "tools": [
+                "latexmk"
+            ]
+        }
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "%DOC%",
+                "-silent"
+            ],
+            "env": {}
+        }
+    ],
+    "latex-workshop.latex.rootFile.useSubFile": true,
+    "latex-workshop.intellisense.file.base": "both",
+    // Dev Containerを使わない場合はtrueにする
+    "latex-workshop.docker.enabled": false,
+    "latex-workshop.docker.image.latex": "pddg/latex:3.1.0",
+    "latex-workshop.intellisense.package.enabled": true,
+    "latex-workshop.latex.clean.subfolder.enabled": true,
+    "latex-workshop.latex.autoClean.run": "onFailed",
+    "latex-workshop.synctex.afterBuild.enabled": true,
+    "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
+    "latex-workshop.view.pdf.viewer": "tab",
+}

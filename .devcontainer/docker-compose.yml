@@ -1,0 +1,17 @@
+version: "3"
+services:
+  latex:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        USERNAME: vscode
+        # init.shで生成された .devcontainer/.env から値を読み込む
+        # この値はホストのUID/GIDとコンテナ内のUID/GIDと一致する
+        UID: $UID
+        GID: $GID
+    volumes:
+      - type: bind
+        source: ..
+        target: /workspace
+    command: /bin/sh -c 'sleep infinity'
