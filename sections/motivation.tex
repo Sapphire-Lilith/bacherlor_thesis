@@ -33,6 +33,7 @@
 
 GitHub Issues\footnote{https://docs.github.com/en/issues}はGitHub\footnote{https://github.com}が提供する機能であり，ソフトウェアに対して問題を報告するための機能である．
 これによりソフトウェア開発者は他の開発者および使用者からバグの報告や改善の要望を受け取ることができる．
+本研究ではソフトウェア開発に報告される問題としてGiHubリポジトリに報告されるGitHub Issuesを調査する．
 
 \section{BERTopic}
 
@@ -40,5 +41,6 @@ BERTopicは文書分類に用いられるトピックモデル手法の一種で
 トピックモデリング手法としてLDA(Latent Dirichlet Allocation)が広く利用されているが，LDAはハイパーパラメータの調整の難しさが指摘されている\cite{panichella:2021}．
 一方でBERTopicはモデルの学習後にトピックの数を調整できるため，LDAより容易に最適な結果を得ることができる．
 またBERTopicはLDAを含む従来のトピックモデル手法より性能に優れることが報告されている\cite{egger:2022}．
+本研究ではGitHub Issuesに対してBERTopicを適用し，報告される問題をトピックモデルにより分類することで形式手法の適用によるソフトウェア開発に特有の問題を調査する．
 
 \end{document}
