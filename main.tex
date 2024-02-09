@@ -3,6 +3,16 @@
 \usepackage{kit-is-b}
 \usepackage{subfiles}
 
+\usepackage{threeparttable}
+
+\usepackage{xcolor}
+\newcommand{\todo}[1]{
+	{
+		\color{red}
+		（\textbf{TODO: #1}）
+	}
+}
+
 \author{井上　蒼士}
 \idnumber{20122009}
 \deadline{2024}{2}{9}
@@ -15,23 +25,24 @@
 \begin{document}
 \maketitle
 
-\subfile{sections/abstraction}
+\subfile{sections/abstract}
 
 \begin{contents}
-\tableofcontents
-% \nchapter{foo}
+	\tableofcontents
+	% \nchapter{}
 \end{contents}
 
 \subfile{sections/introduction}
 \subfile{sections/motivation}
-\subfile{sections/target}
+\subfile{sections/survey}
 \subfile{sections/experiment}
 % \subfile{sections/conclusion}
 % \subfile{sections/acknowledgement}
 
 \bibliographystyle{kit-is}
 \bibliography{main}
-(arXivから引用した文献の情報からページを抜く : TODO)
+
+\todo{arXivから引用した文献の情報からページを抜く}
 
 % \subfile{sections/appendix.tex}
 

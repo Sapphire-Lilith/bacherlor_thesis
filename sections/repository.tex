@@ -1,0 +1,112 @@
+%!TEX root = ../main.tex
+\documentclass[main]{subfiles}
+
+\begin{document}
+
+% textlint-disable ja-technical-writing/sentence-length
+
+\begin{table}[p]
+	\centering
+	\caption{形式手法を適用して開発されたリポジトリの一覧}
+	\label{tab:repository_formal}
+	\begin{tabular}{ccc} % l:left, c:center, r:right
+		% "\\" to newlilne, "\hline" to border
+		\hline
+		リポジトリ & Star数 & Issue数 \\\hline
+		seL4       & 4445   & 383     \\
+		hacl-star  & 1558   & 222     \\
+		cakeml     & 882    & 456     \\
+		CompCert   & 1721   & 276     \\\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[p]
+	\centering
+	\caption{形式手法を適用していないリポジトリの一覧}
+	\label{tab:repository_common}
+	\begin{tabular}{ccc} % l:left, c:center, r:right
+		% "\\" to newlilne, "\hline" to border
+		\hline
+		リポジトリ & Star数 & Issue数 \\\hline
+		react      & 218219 & 12675   \\
+		vue        & 206312 & 10012   \\
+		bootstrap  & 166683 & 22266   \\
+		ohmyzsh    & 166475 & 4626    \\\hline
+	\end{tabular}
+\end{table}
+
+\todo{リポジトリに注釈}
+
+% textlint-enable ja-technical-writing/sentence-length
+
+\end{document}
+
+% [
+%   {
+%     owner: "seL4",
+%     name: "seL4",
+%     url: "https://github.com/seL4/seL4",
+%     stargazerCount: 4445,
+%     issueCount: 383,
+%     pullRequestCount: 798,
+%   },
+%   {
+%     owner: "hacl-star",
+%     name: "hacl-star",
+%     url: "https://github.com/hacl-star/hacl-star",
+%     stargazerCount: 1558,
+%     issueCount: 222,
+%     pullRequestCount: 683,
+%   },
+%   {
+%     owner: "CakeML",
+%     name: "cakeml",
+%     url: "https://github.com/CakeML/cakeml",
+%     stargazerCount: 882,
+%     issueCount: 456,
+%     pullRequestCount: 521,
+%   },
+%   {
+%     owner: "AbsInt",
+%     name: "CompCert",
+%     url: "https://github.com/AbsInt/CompCert",
+%     stargazerCount: 1721,
+%     issueCount: 276,
+%     pullRequestCount: 234,
+%   },
+% ]
+
+% [
+%   {
+%     owner: "facebook",
+%     name: "react",
+%     url: "https://github.com/facebook/react",
+%     stargazerCount: 218219,
+%     issueCount: 12675,
+%     pullRequestCount: 14394,
+%   },
+%   {
+%     owner: "vuejs",
+%     name: "vue",
+%     url: "https://github.com/vuejs/vue",
+%     stargazerCount: 206312,
+%     issueCount: 10012,
+%     pullRequestCount: 2504,
+%   },
+%   {
+%     owner: "twbs",
+%     name: "bootstrap",
+%     url: "https://github.com/twbs/bootstrap",
+%     stargazerCount: 166683,
+%     issueCount: 22266,
+%     pullRequestCount: 14997,
+%   },
+%   {
+%     owner: "ohmyzsh",
+%     name: "ohmyzsh",
+%     url: "https://github.com/ohmyzsh/ohmyzsh",
+%     stargazerCount: 166475,
+%     issueCount: 4626,
+%     pullRequestCount: 7094,
+%   },
+% ]
