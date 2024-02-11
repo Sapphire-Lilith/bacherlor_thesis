@@ -41,7 +41,7 @@
 
 BERTopicは学習済みの埋め込みモデルを用いるため，一般的な英文の分類においては前処理を必要としない．
 しかし本研究で取得したIssueはmarkdown形式で記述されており，またソフトウェアに対する報告であるため，エラーメッセージやコードスニペットを含むことがある．
-これらの情報は文章の意味に影響を与えないが，BERTopicによる分類に影響を与える可能性があるため，前処理を行うことでこれらの情報を除去する．
+これらの情報は文章の意味に影響を与えないが，BERTopicによる分類に影響を与える可能性があるため，前処理を行うことでこれらの情報を除去した．
 
 \section{\ref{enum:bertopic}}
 
@@ -53,5 +53,30 @@ BERTopicは学習済みの埋め込みモデルを用いるため，一般的な
 \section{\ref{enum:labeling}}
 
 本手順では\ref{enum:bertopic}で得られた分類に対してラベルを付与する．
+付与するラベルはHallらの研究およびBissyand{\'e}らの研究\cite{bissyande:2013}において用いられたものを参考にし，本研究で取得したIssueを分類するために適切であると考えられるものを設定した．
+付与したラベルとその意味は次の通りである．
+
+% textlint-disable ja-technical-writing/sentence-length
+\begin{description}[labelwidth=6em, leftmargin=6em]
+	\item[error] ソフトウェアに関して単に動作不良を報告するもの．
+	\item[bug] ソフトウェアに関する動作不良の報告であり，明確にバグであると判断されるもの．
+	\item[requirement] ソフトウェアに関して要求するもの．
+	\item[improvement] ソフトウェアに関する要求であって，機能の追加や改善を求めるもの．
+	\item[question] ソフトウェアに関して質問するもの．
+	\item[maintenance] ソフトウェアの保守に関するもの．
+	\item[other] 以上のいずれにも分類されないもの．
+\end{description}
+% textlint-enable ja-technical-writing/sentence-length
+
+各ラベルは\ref{enum:bertopic}で得られた分類において，その分類を代表する文書を参考にして付与した．
+ただしBERTopicによる分類では外れ値が発生するため，外れ値に対しては一律にotherを付与した．
+
+\section{\ref{enum:aggregate}}
+
+本手順では\ref{enum:labeling}で得られたラベルの出現頻度を，形式手法を適用したリポジトリとそうでないリポジトリとで集計する．
+各リポジトリについて
+
+\section{\ref{enum:statistical}}
 
 \end{document}
+
