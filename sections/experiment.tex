@@ -7,8 +7,51 @@
 
 % 以下，形式手法を適用した形式的，そうでない開発手法を一般的と表現する．
 
-形式手法を適用したソフトウェア開発に特有の問題を調査するため，\ref{sec:survey-target}節で述べたリポジトリに報告されたIssueを分類し，その傾向を比較した．
+形式手法を適用したソフトウェア開発に特有の問題を調査するため，\ref{sec:survey-target}節で述べたリポジトリのIssueを各々について分類し，その傾向を比較した．
 調査は以下の手順で行った．
 
+% textlint-disable ja-technical-writing/sentence-length
+\begin{enumerate}[label=手順\arabic*.]
+	\item \label{enum:preprocess}
+	      リポジトリからIssueを取得し，前処理を行う．
+	\item \label{enum:bertopic}
+	      各リポジトリのIssueをBERTopicにより分類する．
+	\item \label{enum:labeling}
+	      \ref{enum:bertopic}で得られた分類に対してラベルを付与する．
+	\item \label{enum:aggregate}
+	      \ref{enum:labeling}で得られたラベルの出現頻度を，形式手法を適用したリポジトリとそうでないリポジトリとで集計する．
+	\item \label{enum:statistical}
+	      \ref{enum:aggregate}で得られた集計結果をピアソンの\(\chi^2\)検定により比較する．
+\end{enumerate}
+% textlint-enable ja-technical-writing/sentence-length
+
+\section{\ref{enum:preprocess}}
+
+本手順ではリポジトリから取得したIssueをBERTopicにより分類するための前処理を行う．
+前処理の内容は次の通りである．
+
+% textlint-disable ja-technical-writing/no-doubled-conjunction
+\begin{enumerate}
+	\item \label{enum:filter}
+	      Issueのtitle要素およびbody要素からURL，メールアドレス，コードブロック，記号を除去する．
+	\item \label{enum:lowercase}
+	      Issueのtitle要素およびbody要素を結合し，単一のテキストとする．
+\end{enumerate}
+% textlint-enable ja-technical-writing/no-doubled-conjunction
+
+BERTopicは学習済みの埋め込みモデルを用いるため，一般的な英文の分類においては前処理を必要としない．
+しかし本研究で取得したIssueはmarkdown形式で記述されており，またソフトウェアに対する報告であるため，エラーメッセージやコードスニペットを含むことがある．
+これらの情報は文章の意味に影響を与えないが，BERTopicによる分類に影響を与える可能性があるため，前処理を行うことでこれらの情報を除去する．
+
+\section{\ref{enum:bertopic}}
+
+本手順では各リポジトリについて前処理を行ったIssueをBERTopicにより分類する．
+この結果として，分類に加えて各分類を代表する単語および文書が得られる．
+ここで分類を代表する単語とは，各分類に含まれる文書の中で最もその分類を特徴づけると考えられる単語であり，本調査においてはそれぞれの分類に対して5単語を抽出した．
+また分類を代表する文書とは，各分類に含まれる文書の中で最もその分類を特徴づけると考えられる文書であり，本調査においてはそれぞれの分類に対して3文書を抽出した．
+
+\section{\ref{enum:labeling}}
+
+本手順では\ref{enum:bertopic}で得られた分類に対してラベルを付与する．
 
 \end{document}
