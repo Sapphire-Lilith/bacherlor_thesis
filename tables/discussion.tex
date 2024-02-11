@@ -1,0 +1,55 @@
+\begin{table}[p] % require package "float"
+	\centering
+	\caption{形式手法を適用して開発されたソフトウェアにおけるラベルの出現割合}
+	\label{tab:discussion_formal}
+	\begin{tabular}{ccccc} % l:left, c:center, r:right
+		% "\\" to newlilne, "\hline" to border
+		\hline
+		ラベル      & seL4(\%) & hacl-star(\%) & CakeML(\%) & CompCert(\%) \\\hline
+		error       & 28.20    & 31.53         & 0.00       & 6.52         \\
+		bug         & 9.66     & 0.00          & 0.00       & 17.75        \\
+		requirement & 0.00     & 0.00          & 21.10      & 0.00         \\
+		improvement & 7.83     & 9.46          & 38.02      & 11.59        \\
+		question    & 0.00     & 0.00          & 0.00       & 0.00         \\
+		maintenance & 3.92     & 18.47         & 0.00       & 26.81        \\
+		none        & 50.39    & 40.54         & 40.88      & 37.32        \\\hline
+	\end{tabular}
+\end{table}
+
+% label,percentage_seL4_seL4,percentage_hacl-star_hacl-star,percentage_CakeML_cakeml,percentage_AbsInt_CompCert
+% error,28.198433420365536,31.53153153153153,0.0,6.521739130434782
+% bug,9.660574412532636,0.0,0.0,17.753623188405797
+% requirement,0.0,0.0,21.0989010989011,0.0
+% improvement,7.83289817232376,9.45945945945946,38.02197802197802,11.594202898550725
+% question,0.0,0.0,0.0,0.0
+% maintenance,3.91644908616188,18.46846846846847,0.0,26.811594202898554
+% none,50.391644908616186,40.54054054054054,40.879120879120876,37.31884057971014
+
+
+\begin{table}[p] % require package "float"
+	\centering
+	\caption{形式手法を適用せず開発されたソフトウェアにおけるラベルの出現割合}
+	\label{tab:discussion_common}
+	\begin{tabular}{ccccc} % l:left, c:center, r:right
+		% "\\" to newlilne, "\hline" to border
+		\hline
+		ラベル      & blog\_os(\%) & cryfs(\%) & shc(\%) & hakyll(\%) \\\hline
+		error       & 41.30        & 36.80     & 44.62   & 21.65      \\
+		bug         & 0.00         & 3.58      & 0.00    & 0.00       \\
+		requirement & 0.00         & 0.00      & 0.00    & 0.00       \\
+		improvement & 14.67        & 16.23     & 0.00    & 17.11      \\
+		question    & 0.00         & 0.00      & 0.00    & 10.31      \\
+		maintenance & 0.00         & 0.00      & 0.00    & 0.00       \\
+		none        & 35.78        & 43.44     & 55.38   & 50.93      \\\hline
+	\end{tabular}
+\end{table}
+
+% label,percentage_phil-opp_blog_os,percentage_cryfs_cryfs,percentage_neurobin_shc,percentage_jaspervdj_hakyll
+% error,49.55555555555556,36.754176610978526,44.61538461538462,21.649484536082475
+% bug,0.0,3.579952267303103,0.0,0.0
+% requirement,0.0,0.0,0.0,0.0
+% improvement,14.666666666666666,16.2291169451074,0.0,17.11340206185567
+% question,0.0,0.0,0.0,10.309278350515465
+% maintenance,0.0,0.0,0.0,0.0
+% none,35.77777777777777,43.43675417661098,55.38461538461539,50.92783505154639
+

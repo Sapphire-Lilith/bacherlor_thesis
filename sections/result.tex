@@ -5,9 +5,13 @@
 
 \chapter{調査結果}
 
-\ref{sec:labeling}，\ref{sec:aggregate}節の手順で得られた各リポジトリにおけるラベルの出現割合を表\ref{tab:formal_label}，\ref{tab:common_label}に示す．
-表\ref{tab:formal_label}，\ref{tab:common_label}において
-% noneは外れ値も含むから統計から外したよ
+形式手法を適用して開発されたソフトウェアとそうでないソフトウェアにおけるラベルの出現割合をピアソンの\(\chi^2\)乗検定により比較した結果，有意水準5\%でラベルの出現割合に有意な差が認められた．
+ここで\ref{sec:labeling}，\ref{sec:aggregate}節の手順で得た各リポジトリにおけるラベルの出現回数を表\ref{tab:formal_label}，\ref{tab:common_label}に示す．
+また表\ref{tab:formal_label}，\ref{tab:common_label}の平均の列を取り出したものを表\ref{tab:agg_label}に示す．これが\ref{sec:statistical}節で検定により比較した対象である．
+ただし検定はotherのラベルについての情報を除いて行った．
+これはBERTopicによる分類における外れ値であり，どの分類にも属さないIssueのみがotherのラベルを持つとは限らないためである．
+
+以上の結果から，形式手法を適用して開発されたソフトウェアとそうでないソフトウェアにおいて，Issueの傾向に有意な差が認められたと言える．
 
 \input{tables/result}
 

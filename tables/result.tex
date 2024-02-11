@@ -1,59 +1,76 @@
 % textlint-disable
 \begin{table}[p] % require package "float"
 	\centering
-	\caption{形式手法を適用して開発されたソフトウェアの各リポジトリにおけるラベルの出現割合}
+	\caption{形式手法を適用して開発されたソフトウェアの各リポジトリにおけるラベルの出現回数}
 	\label{tab:formal_label}
 	\begin{tabular}{cccccc} % l:left, c:center, r:right
 		% "\\" to newlilne, "\hline" to border
 		\hline
-		ラベル      & seL4(\%) & hacl-star(\%) & cakeml(\%) & CompCert(\%) & 平均(\%) \\\hline
-		error       & 28.20    & 31.53         & 0.0        & 6.52         & 16.56    \\
-		bug         & 9.66     & 0.0           & 0.0        & 17.75        & 6.85     \\
-		requirement & 0.0      & 0.0           & 21.10      & 0.0          & 5.27     \\
-		improvement & 7.83     & 9.46          & 38.02      & 11.59        & 16.73    \\
-		question    & 0.0      & 0.0           & 0.0        & 0.0          & 0.0      \\
-		maintenance & 3.92     & 18.47         & 0.0        & 26.81        & 12.30    \\
-		none        & 50.39    & 40.54         & 40.88      & 37.32        & 42.28    \\\hline
+		ラベル      & seL4(回) & hacl-star(回) & CakeML(回) & CompCert(回) & 合計(回) \\\hline
+		error       & 108      & 70            & 0          & 18           & 196      \\
+		bug         & 37       & 0             & 0          & 49           & 86       \\
+		requirement & 0        & 0             & 96         & 0            & 96       \\
+		improvement & 30       & 21            & 173        & 32           & 256      \\
+		question    & 0        & 0             & 0          & 0            & 0        \\
+		maintenance & 15       & 41            & 0          & 74           & 130      \\
+		other       & 193      & 90            & 186        & 103          & 572      \\\hline
 	\end{tabular}
 \end{table}
 
-% label,percentage_seL4_seL4,percentage_hacl-star_hacl-star,percentage_CakeML_cakeml,percentage_AbsInt_CompCert,percentage_mean
-% error,28.198433420365536,31.53153153153153,0.0,6.521739130434782,16.562926020582964
-% bug,9.660574412532636,0.0,0.0,17.753623188405797,6.853549400234608
-% requirement,0.0,0.0,21.0989010989011,0.0,5.274725274725275
-% improvement,7.83289817232376,9.45945945945946,38.02197802197802,11.594202898550725,16.72713463807799
-% question,0.0,0.0,0.0,0.0,0.0
-% maintenance,3.91644908616188,18.46846846846847,0.0,26.811594202898554,12.299127939382226
-% none,50.391644908616186,40.54054054054054,40.879120879120876,37.31884057971014,42.28253672699694
-
+% label,count_seL4_seL4,count_hacl-star_hacl-star,count_CakeML_cakeml,count_AbsInt_CompCert,count_sum,percentage
+% error,108,70,0,18,196,14.670658682634732
+% bug,37,0,0,49,86,6.437125748502995
+% requirement,0,0,96,0,96,7.185628742514972
+% improvement,30,21,173,32,256,19.16167664670659
+% question,0,0,0,0,0,0.0
+% maintenance,15,41,0,74,130,9.73053892215569
+% none,193,90,186,103,572,42.814371257485035
 
 \begin{table}[p] % require package "float"
 	\centering
-	\caption{形式手法を適用せず開発されたソフトウェアの各リポジトリにおけるラベルの出現割合}
+	\caption{形式手法を適用せず開発されたソフトウェアの各リポジトリにおけるラベルの出現回数}
 	\label{tab:common_label}
 	\begin{tabular}{cccccc} % l:left, c:center, r:right
 		% "\\" to newlilne, "\hline" to border
 		\hline
-		ラベル      & blog\_os(\%) & cryfs(\%) & shc(\%) & hakyll(\%) & 平均(\%) \\\hline
-		error       & 49.56        & 36.75     & 44.62   & 21.65      & 38.14    \\
-		bug         & 0.0          & 3.58      & 0.0     & 0.0        & 0.89     \\
-		requirement & 0.0          & 0.0       & 0.0     & 0.0        & 0.0      \\
-		improvement & 14.67        & 16.23     & 0.0     & 17.11      & 12.00    \\
-		question    & 0.0          & 0.0       & 0.0     & 10.31      & 2.58     \\
-		maintenance & 0.0          & 0.0       & 0.0     & 0.0        & 0.0      \\
-		none        & 35.78        & 43.44     & 55.38   & 50.93      & 46.38    \\\hline
+		ラベル      & blog\_os(回) & cryfs(回) & shc(回) & hakyll(回) & 合計(回) \\\hline
+		error       & 223          & 154       & 58      & 105        & 540      \\
+		bug         & 0            & 15        & 0       & 0          & 15       \\
+		requirement & 0            & 0         & 0       & 0          & 0        \\
+		improvement & 66           & 68        & 0       & 83         & 217      \\
+		question    & 0            & 0         & 0       & 50         & 50       \\
+		maintenance & 0            & 0         & 0       & 0          & 0        \\
+		other       & 161          & 182       & 72      & 247        & 662      \\\hline
 	\end{tabular}
 \end{table}
 
-% label,percentage_phil-opp_blog_os,percentage_cryfs_cryfs,percentage_neurobin_shc,percentage_jaspervdj_hakyll,percentage_mean
-% error,49.55555555555556,36.754176610978526,44.61538461538462,21.649484536082475,38.14365032950029
-% bug,0.0,3.579952267303103,0.0,0.0,0.8949880668257757
-% requirement,0.0,0.0,0.0,0.0,0.0
-% improvement,14.666666666666666,16.2291169451074,0.0,17.11340206185567,12.002296418407433
-% question,0.0,0.0,0.0,10.309278350515465,2.577319587628866
-% maintenance,0.0,0.0,0.0,0.0,0.0
-% none,35.77777777777777,43.43675417661098,55.38461538461539,50.92783505154639,46.38174559763763
+% label,count_phil-opp_blog_os,count_cryfs_cryfs,count_neurobin_shc,count_jaspervdj_hakyll,count_sum,percentage
+% error,223,154,58,105,540,36.38814016172507
+% bug,0,15,0,0,15,1.0107816711590298
+% requirement,0,0,0,0,0,0.0
+% improvement,66,68,0,83,217,14.622641509433961
+% question,0,0,0,50,50,3.369272237196766
+% maintenance,0,0,0,0,0,0.0
+% none,161,182,72,247,662,44.60916442048518
 
 
+
+\begin{table}[p] % require package "float"
+	\centering
+	\caption{形式手法を適用して開発されたソフトウェアとそうでないソフトウェアにおけるラベルの出現割合}
+	\label{tab:agg_label}
+	\begin{tabular}{ccc}
+		% "\\" to newlilne, "\hline" to border
+		\hline
+		ラベル      & 形式手法を適用(\%) & 形式手法を適用せず(\%) \\\hline
+		error       & 14.67              & 36.39                  \\
+		bug         & 6.44               & 1.01                   \\
+		requirement & 7.19               & 0.00                   \\
+		improvement & 19.16              & 14.62                  \\
+		question    & 0.00               & 3.37                   \\
+		maintenance & 9.73               & 0.00                   \\
+		other       & 42.81              & 44.61                  \\\hline
+	\end{tabular}
+\end{table}
 
 % textlint-enable
