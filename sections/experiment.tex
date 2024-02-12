@@ -103,20 +103,10 @@ BERTopicは学習済みの埋め込みモデルを用いるため，一般的な
 \label{sec:labeling}
 
 本手順では\ref{enum:bertopic}で得られた分類に対してラベルを付与する．
-付与するラベルはHallらの研究およびBissyand{\'e}らの研究\cite{bissyande:2013}において用いられたものを参考にし，本研究で取得したIssueを分類するために適切であると考えられるものを設定した．
-付与したラベルとその意味は次の通りである．
+付与するラベルはHallらの研究\cite{hall:2001}およびBissyand{\'e}らの研究\cite{bissyande:2013}において用いられたものを参考にし，本研究で取得したIssueを分類するために適切であると考えられるものを設定した．
+付与したラベルとその意味を表\ref{tab:label_meaning}に示す．
 
-% textlint-disable ja-technical-writing/sentence-length
-\begin{description}[labelwidth=6em, leftmargin=6em]
-	\item[error] ソフトウェアに関して単に動作不良を報告するもの．
-	\item[bug] ソフトウェアに関する動作不良の報告であり，明確にバグであると判断されるもの．
-	\item[requirement] ソフトウェアに関して要求するもの．
-	\item[improvement] ソフトウェアに関する要求であって，機能の追加や改善を求めるもの．
-	\item[question] ソフトウェアに関して質問するもの．
-	\item[maintenance] ソフトウェアの保守に関するもの．
-	\item[other] 以上のいずれにも分類されないもの．
-\end{description}
-% textlint-enable ja-technical-writing/sentence-length
+\input{tables/label}
 
 各ラベルは\ref{enum:bertopic}で得られた分類において，その分類を代表する文書を参考にして付与した．
 ただしBERTopicによる分類では外れ値が発生するため，外れ値に対しては一律にotherを付与した．
@@ -144,6 +134,9 @@ BERTopicは学習済みの埋め込みモデルを用いるため，一般的な
 ここでピアソンの\(\chi^2\)検定は分類されたデータの連関を検定するノンパラメトリック検定であり，ウェルチの検定は2つの平均の差を検定するパラメトリック検定である．
 本研究においては\ref{enum:aggregate}で得られたラベルの出現割合について，形式手法を適用して開発されたソフトウェアとそうでないソフトウェアとの間でピアソンの\(\chi^2\)検定を行う．
 また各ラベルの出現割合について，形式手法を適用して開発されたソフトウェアとそうでないソフトウェアとの間でウェルチの検定（片側検定）を行う．
+
+ただし検定はotherのラベルについての情報を除いて行った．
+これはBERTopicによる分類における外れ値にotherを付与しており，どの分類にも属さないIssueのみがotherのラベルを持つとは限らないためである．
 
 \end{document}
 

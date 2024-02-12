@@ -1,0 +1,21 @@
+% textlint-disable
+
+\begin{table}[p] % require package "float"
+	\centering
+	\caption{Issueの分類に付与したラベルとその意味}
+	\label{tab:label_meaning}
+	\begin{tabular}{cc} % l:left, c:center, r:right
+		% "\\" to newlilne, "\hline" to border
+		\Hline
+		ラベル & 意味 \\\hline
+		error & 動作不良を報告するもの \\
+		bug & 動作不良の報告であって，明確にバグであると判断されるもの \\
+		requirement & ソフトウェアに関して要求するもの \\
+		improvement & 要求であって，機能の追加や改善を求めるもの \\
+		question & ソフトウェアに関して質問するもの \\
+		maintenance & 保守に関するもの \\
+		other & 上記のいずれにも分類されないもの \\\Hline
+	\end{tabular}
+\end{table}
+
+% \end{description}
