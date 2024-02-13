@@ -11,15 +11,15 @@
 % textlint-disable ja-technical-writing/sentence-length
 \begin{enumerate}[label=手順\arabic*.]
 	\item \label{enum:preprocess}
-	      リポジトリからIssueを取得し，前処理を行う．
+	      各リポジトリのIssueを取得し，前処理を行う．
 	\item \label{enum:bertopic}
-	      各リポジトリのIssueをBERTopicにより分類する．
+	      前処理が施されたIssueをBERTopicにより分類する．
 	\item \label{enum:labeling}
 	      \ref{enum:bertopic}で得られた分類に対してラベルを付与する．
 	\item \label{enum:aggregate}
-	      \ref{enum:labeling}で得られたラベルの出現頻度を，形式手法を適用して開発されたソフトウェアとそうでないソフトウェアとで集計する．
+	      \ref{enum:labeling}で得られたラベルの出現頻度を，形式手法を適用して開発されたソフトウェアとそうでないソフトウェアとのそれぞれについて集計する．
 	\item \label{enum:statistical}
-	      \ref{enum:aggregate}で得られた集計結果をピアソンの\(\chi^2\)検定により比較する．
+	      \ref{enum:aggregate}で得られた集計結果をピアソンの\(\chi^2\)検定およびウェルチの検定により比較する．
 \end{enumerate}
 % textlint-enable ja-technical-writing/sentence-length
 
@@ -31,14 +31,14 @@
 \label{sec:hypothesis}
 
 本研究では各リポジトリのIssueを\ref{sec:labeling}節で述べるerror，bug，requirement，improvement，question，maintenance，otherの8種類のラベルによって分類した．
-ここで形式手法を適用したソフトウェア開発に特有の傾向があると仮説し，加えて次の仮説を立てた．
+ここで形式手法を適用して開発されたソフトウェアに特有の傾向があることを仮説とし，加えて次の仮説を立てた．
 
 % textlint-disable ja-technical-writing/sentence-length
 \begin{enumerate}[label=仮説\arabic*.]
-	\item \label{hyp:1} 形式手法を適用して開発されたソフトウェアは，形式手法を適用せず開発されたソフトウェアと比較してerrorの出現割合が低い．
-	\item \label{hyp:2} 形式手法を適用して開発されたソフトウェアは，形式手法を適用せず開発されたソフトウェアと比較してbugの出現割合が高い．
-	\item \label{hyp:3} 形式手法を適用して開発されたソフトウェアは，形式手法を適用せず開発されたソフトウェアと比較してimprovementの出現割合が低い．
-	\item \label{hyp:4} 形式手法を適用して開発されたソフトウェアは，形式手法を適用せず開発されたソフトウェアと比較してmaintenanceの出現割合が高い．
+	\item \label{hyp:1} 形式手法を適用して開発されたソフトウェアはそうでないソフトウェアよりerrorの出現割合が低い．
+	\item \label{hyp:2} 形式手法を適用して開発されたソフトウェアはそうでないソフトウェアよりbugの出現割合が高い．
+	\item \label{hyp:3} 形式手法を適用して開発されたソフトウェアはそうでないソフトウェアよりimprovementの出現割合が低い．
+	\item \label{hyp:4} 形式手法を適用して開発されたソフトウェアはそうでないソフトウェアよりmaintenanceの出現割合が高い．
 \end{enumerate}
 % textlint-enable ja-technical-writing/sentence-length
 
